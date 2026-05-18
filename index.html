@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regulamento Oficial - Açaí da Ilha 3 Anos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#09040f;
+      color:#f5f5f5;
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    .bg-glow{
+      position:fixed;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      filter:blur(120px);
+      z-index:-1;
+      opacity:0.7;
+    }
+
+    .bg-glow.one{
+      top:-150px;
+      left:-150px;
+      background:rgba(128,0,255,0.22);
+    }
+
+    .bg-glow.two{
+      bottom:-150px;
+      right:-150px;
+      background:rgba(255,179,0,0.18);
+    }
+
+    .container{
+      width:92%;
+      max-width:1150px;
+      margin:auto;
+      padding:40px 0 70px;
+    }
+
+    /* HERO */
+
+    .hero{
+      background:linear-gradient(135deg,#2a0f34,#1a0624);
+      border-radius:34px;
+      padding:60px 35px;
+      border:1px solid rgba(255,255,255,0.06);
+      box-shadow:0 20px 60px rgba(0,0,0,0.35);
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(
+        135deg,
+        rgba(255,179,0,0.08),
+        rgba(140,45,255,0.08)
+      );
+      pointer-events:none;
+    }
+
+    .logo{
+      width:120px;
+      max-width:100%;
+      margin:0 auto 20px auto;
+      display:block;
+      filter:drop-shadow(0 10px 25px rgba(0,0,0,0.35));
+    }
+
+    .tag{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      width:fit-content;
+      margin:0 auto 30px auto;
+
+      padding:10px 24px;
+
+      border-radius:999px;
+
+      background:rgba(255,179,0,0.12);
+
+      border:1px solid rgba(255,179,0,0.28);
+
+      color:#ffb300;
+
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:1px;
+      text-align:center;
+    }
+
+    h1{
+      font-size:clamp(2.4rem,6vw,5.5rem);
+      font-weight:800;
+      line-height:1.05;
+      margin-bottom:24px;
+
+      background:linear-gradient(to right,#fff1d6,#ffcf75);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .subtitle{
+      max-width:780px;
+      font-size:1.08rem;
+      color:#d4c7d9;
+    }
+
+    /* SECTIONS */
+
+    .section{
+      margin-top:28px;
+
+      background:#140a1e;
+
+      border-radius:26px;
+
+      padding:34px;
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      box-shadow:0 12px 35px rgba(0,0,0,0.22);
+    }
+
+    .section h2{
+      color:#ffb300;
+      margin-bottom:18px;
+      font-size:1.4rem;
+      font-weight:700;
+    }
+
+    .section p{
+      margin-bottom:14px;
+      color:#ececec;
+    }
+
+    .section ul{
+      padding-left:20px;
+    }
+
+    .section li{
+      margin-bottom:12px;
+      color:#ececec;
+    }
+
+    .highlight{
+      color:#c98cff;
+      font-weight:600;
+    }
+
+    /* CARDS */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,#221031,#15091f);
+      border-radius:22px;
+      padding:28px;
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      transition:0.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(255,179,0,0.3);
+    }
+
+    .card h3{
+      color:#ffb300;
+      margin-bottom:12px;
+      font-size:1.2rem;
+    }
+
+    .card p{
+      color:#dfdfdf;
+      font-size:0.96rem;
+    }
+
+    /* SUMMARY */
+
+    .summary{
+      margin-top:35px;
+
+      background:linear-gradient(135deg,#ffb300,#8f31ff);
+
+      border-radius:30px;
+
+      padding:45px 35px;
+
+      text-align:center;
+
+      color:white;
+
+      box-shadow:0 20px 60px rgba(143,49,255,0.25);
+    }
+
+    .summary h2{
+      font-size:2rem;
+      margin-bottom:18px;
+      font-weight:800;
+    }
+
+    .summary p{
+      max-width:750px;
+      margin:auto;
+      font-size:1.08rem;
+      line-height:1.8;
+    }
+
+    footer{
+      text-align:center;
+      padding-top:35px;
+      color:#8d8d8d;
+      font-size:0.85rem;
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 768px){
+
+      .container{
+        width:94%;
+        padding:25px 0 50px;
+      }
+
+      .hero{
+        padding:42px 22px;
+        border-radius:26px;
+      }
+
+      .logo{
+        width:95px;
+      }
+
+      .tag{
+        font-size:12px;
+        padding:9px 18px;
+        margin-bottom:24px;
+      }
+
+      h1{
+        font-size:2.5rem;
+        line-height:1.1;
+      }
+
+      .subtitle{
+        font-size:0.96rem;
+      }
+
+      .section{
+        padding:25px;
+        border-radius:22px;
+      }
+
+      .section h2{
+        font-size:1.2rem;
+      }
+
+      .section p,
+      .section li{
+        font-size:0.95rem;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .summary{
+        padding:35px 24px;
+      }
+
+      .summary h2{
+        font-size:1.6rem;
+      }
+
+      .summary p{
+        font-size:0.98rem;
+      }
+    }
+
+    @media (max-width: 480px){
+
+      .hero{
+        padding:34px 18px;
+      }
+
+      .logo{
+        width:80px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+
+      .subtitle{
+        font-size:0.9rem;
+      }
+
+      .section{
+        padding:22px;
+      }
+
+      .section h2{
+        font-size:1.08rem;
+      }
+
+      .section p,
+      .section li{
+        font-size:0.9rem;
+      }
+
+      .summary{
+        padding:28px 20px;
+      }
+
+      .summary h2{
+        font-size:1.3rem;
+      }
+
+      .summary p{
+        font-size:0.9rem;
+      }
+
+      footer{
+        font-size:0.72rem;
+      }
+
+      .bg-glow{
+        width:280px;
+        height:280px;
+        filter:blur(90px);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow one"></div>
+  <div class="bg-glow two"></div>
+
+  <div class="container">
+
+    <section class="hero">
+
+      <img src="logo_3_anos.png" alt="Logo Açaí da Ilha" class="logo">
+
+      <div class="tag">
+        REGULAMENTO OFICIAL
+      </div>
+
+      <h1>
+        Aniversário Açaí da Ilha 3 Anos
+      </h1>
+
+      <p class="subtitle">
+        A maior premiação já vista em uma açaiteria do sertão.
+        Quanto mais você consome, mais chances você tem de subir ao pódio.
+      </p>
+
+    </section>
+
+    <section class="section">
+      <h2>1. Sobre a Promoção</h2>
+
+      <p>
+        O Açaí da Ilha celebra 3 anos com uma campanha promocional de incentivo ao consumo,
+        premiando clientes participantes conforme as regras abaixo.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>2. Período e Data do Sorteio</h2>
+
+      <ul>
+        <li><span class="highlight">Data:</span> 14/07</li>
+        <li><span class="highlight">Horário:</span> 17h</li>
+        <li><span class="highlight">Formato:</span> Presencial na unidade da Promotora</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>3. Como Participar</h2>
+
+      <ul>
+        <li>A cada R$ 30,00 em compras: 1 cupom</li>
+        <li>A cada R$ 50,00 em compras: 2 cupons</li>
+        <li>
+          Pedidos acima de R$ 50,00 realizados pelo cardápio web ou iFood
+          garantem 3 cupons por pedido
+        </li>
+      </ul>
+
+      <p>
+        Preencha corretamente nome, CPF e contato para validar sua participação.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>4. Quem Pode Participar</h2>
+
+      <ul>
+        <li>Pessoas físicas com CPF válido</li>
+        <li>Menores de idade podem participar com responsável legal</li>
+      </ul>
+
+      <p class="highlight">
+        Não participam funcionários, colaboradores e parentes de primeiro grau.
+      </p>
+    </section>
+
+    <section class="section">
+
+      <h2>5. Os Prêmios</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>1º Lugar</h3>
+
+          <p>
+            1 ano de açaí grátis com validade de 12 meses e limite mensal de R$100,00.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>2º Lugar</h3>
+
+          <p>
+            R$1.000,00 via PIX ou dinheiro em espécie.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>3º Lugar</h3>
+
+          <p>
+            Voucher de R$500,00 para viagem com a Roma Viagens.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+      <h2>6. Regras Importantes</h2>
+
+      <ul>
+        <li>O prêmio de açaí é exclusivo para produtos de açaí</li>
+        <li>Benefício não acumulativo</li>
+        <li>Uso vinculado ao cartão exclusivo do ganhador</li>
+        <li>Voucher não pode ser convertido em dinheiro</li>
+        <li>Todos os prêmios são pessoais e intransferíveis</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>7. Apuração e Validação</h2>
+
+      <p>
+        Os cupons serão sorteados de forma aleatória.
+      </p>
+
+      <p>
+        Cupons com informações incorretas serão desclassificados.
+      </p>
+
+      <p>
+        A Promotora poderá validar todos os dados antes da entrega dos prêmios.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>8. Entrega dos Prêmios</h2>
+
+      <ul>
+        <li>Obrigatória apresentação de documento com foto e CPF</li>
+        <li>Menores recebem via responsável legal</li>
+        <li>Prazo de retirada de até 30 dias</li>
+      </ul>
+
+      <p class="highlight">
+        O não comparecimento no prazo implica perda do prêmio.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>9. Uso de Imagem e Dados</h2>
+
+      <p>
+        Ao participar, o cliente autoriza o uso de sua imagem e nome
+        para divulgação da campanha sem custos.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>10. Disposições Finais</h2>
+
+      <ul>
+        <li>Participar é aceitar todas as regras da campanha</li>
+        <li>
+          A Promotora poderá ajustar a campanha em casos necessários
+        </li>
+        <li>
+          Casos não previstos serão resolvidos pela organização
+        </li>
+      </ul>
+    </section>
+
+    <section class="summary">
+
+      <h2>
+        Quanto mais você compra, mais chances você tem
+      </h2>
+
+      <p>
+        Quanto mais cupons você acumula, maiores são suas chances de ganhar.
+        No aniversário de 3 anos do Açaí da Ilha, quem sobe ao pódio é você.
+      </p>
+
+    </section>
+
+    <footer>
+      Açaí da Ilha • Regulamento Oficial • 3 Anos
+    </footer>
+
+  </div>
+
+</body>
+</html>
